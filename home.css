@@ -1,0 +1,9 @@
+/*body {
+  background-image: url(images/naphtali-marshall-13585.jpg);
+  background-repeat: no-repeat;
+}*/
+
+html {
+  background: url(images/naphtali-marshall-13585.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
