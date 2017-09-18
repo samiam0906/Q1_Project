@@ -4,13 +4,14 @@ body {
   flex-direction: column;
 }
 
-main {
+main .collapsible{
   flex: 1 0 auto;
   padding: 20px 0;
 }
 
 .hide {
   display: none;
+  visibility: hidden;
 }
 
 .nav-wrapper .brand-logo {
