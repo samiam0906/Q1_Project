@@ -6,6 +6,10 @@ var collapsibleBody = document.querySelector('.collapsible-body');
 var collapsibleHeader = document.querySelector('.collapsible-header');
 // var redditData = {};
 
+// stores the value of the user dropdown selection ***DOES NOT WORK***
+var userInput = $('.select-dropdown').val();
+console.log(userInput);
+
 // checks if value in array is a string
 // for (var i = 0; i < contentLinks.length; i++) {
 //   if (typeof contentLinks[i] === "string") {
@@ -16,6 +20,30 @@ var collapsibleHeader = document.querySelector('.collapsible-header');
 //   }
 // }
 
+// function that grabs the array index of the select-dropdown options
+$(document).ready(function () {
+    $('select').material_select();
+    $('select').change(function(){
+        var newValuesArr = [],
+            select = $(this),
+            ul = select.prev();
+        ul.children('li').toArray().forEach(function (li, i) {
+            if ($(li).hasClass('active')) {
+                newValuesArr.push(select.children('option').toArray()[i].value - 1);
+            }
+        });
+        select.val(newValuesArr);
+        console.log(newValuesArr);
+    });
+});
+
+// $('.input-field').on('change', 'select', function(){
+//
+// });
+//
+// var userInput = $('#category').value;
+// console.log(userInput);
+
 // returns all of the gif links in an array
 $.get("https://www.reddit.com/r/soccer.json", function(data) {
   var submissions = data.data.children;
@@ -24,7 +52,7 @@ $.get("https://www.reddit.com/r/soccer.json", function(data) {
     if (data.data.children[i].data.secure_media) {
       if (data.data.children[i].data.secure_media.oembed.type == "video") {
         // add the youtube embed urls
-        if(data.data.children[i].data.domain === "youtube.com") {
+        if (data.data.children[i].data.domain === "youtube.com") {
           var youtubeLink = data.data.children[i].data.url.replace("watch?v=", "embed/");
           contentLinks.push(youtubeLink);
         } else {
@@ -91,5 +119,7 @@ $.get("https://www.reddit.com/r/soccer.json", function(data) {
       $(this).next().html('<iframe class="gif" src=' + contentLinks[elementIndex] + '>');
     })
 
+    // initialize our selector form and inputs
+    $('select').material_select()
   })
 });
