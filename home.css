@@ -160,9 +160,9 @@ a{
   line-height: 200px;
 	color: rgba(255,255,255, 0.8);
 }
-.slideshow li:nth-child(1) span { background-image: url(images/naphtali-marshall-13585.jpg) }
+.slideshow li:nth-child(1) span { background-image: url(images/soccer1-naphtali-marshall-13585.jpg) }
 .slideshow li:nth-child(2) span {
-    background-image: url(images/george-doumani-46147.jpg);
+    background-image: url(images/soccer2-george-doumani-46147.jpg);
     -webkit-animation-delay: 6s;
     -moz-animation-delay: 6s;
     -o-animation-delay: 6s;
@@ -170,7 +170,7 @@ a{
     animation-delay: 6s;
 }
 .slideshow li:nth-child(3) span {
-    background-image: url(images/ilnur-kalimullin-332587.jpg);
+    background-image: url(images/basketball1-ilnur-kalimullin-332587.jpg);
     -webkit-animation-delay: 12s;
     -moz-animation-delay: 12s;
     -o-animation-delay: 12s;
@@ -178,7 +178,7 @@ a{
     animation-delay: 12s;
 }
 .slideshow li:nth-child(4) span {
-    background-image: url(images/omair-khan-163090.jpg);
+    background-image: url(images/soccer3-omair-khan-163090.jpg);
     -webkit-animation-delay: 18s;
     -moz-animation-delay: 18s;
     -o-animation-delay: 18s;
@@ -186,7 +186,7 @@ a{
     animation-delay: 18s;
 }
 .slideshow li:nth-child(5) span {
-    background-image: url(images/peter-berko-270649.jpg);
+    background-image: url(images/basketball2-peter-berko-270649.jpg);
     -webkit-animation-delay: 24s;
     -moz-animation-delay: 24s;
     -o-animation-delay: 24s;
@@ -194,7 +194,7 @@ a{
     animation-delay: 24s;
 }
 .slideshow li:nth-child(6) span {
-    background-image: url(images/glen-carrie-102887.jpg);
+    background-image: url(images/soccer4-glen-carrie-102887.jpg);
     -webkit-animation-delay: 30s;
     -moz-animation-delay: 30s;
     -o-animation-delay: 30s;
@@ -203,7 +203,7 @@ a{
 }
 
 .slideshow li:nth-child(7) span {
-    background-image: url(images/george-doumani-46147.jpg);
+    background-image: url(images/soccer2-george-doumani-46147.jpg);
     -webkit-animation-delay: 36s;
     -moz-animation-delay: 36s;
     -o-animation-delay: 36s;
@@ -211,7 +211,7 @@ a{
     animation-delay: 36s;
 }
 .slideshow li:nth-child(8) span {
-    background-image: url(images/ilnur-kalimullin-332587.jpg);
+    background-image: url(images/basketball1-ilnur-kalimullin-332587.jpg);
     -webkit-animation-delay: 42s;
     -moz-animation-delay: 42s;
     -o-animation-delay: 42s;
@@ -219,7 +219,7 @@ a{
     animation-delay: 42s;
 }
 .slideshow li:nth-child(9) span {
-    background-image: url(images/omair-khan-163090.jpg);
+    background-image: url(images/soccer3-omair-khan-163090.jpg);
     -webkit-animation-delay: 48s;
     -moz-animation-delay: 48s;
     -o-animation-delay: 48s;
@@ -227,7 +227,7 @@ a{
     animation-delay: 48s;
 }
 .slideshow li:nth-child(10) span {
-    background-image: url(images/peter-berko-270649.jpg);
+    background-image: url(images/basketball2-peter-berko-270649.jpg);
     -webkit-animation-delay: 54s;
     -moz-animation-delay: 54s;
     -o-animation-delay: 54s;
@@ -235,7 +235,7 @@ a{
     animation-delay: 54s;
 }
 .slideshow li:nth-child(11) span {
-    background-image: url(images/black-and-white-person-sport-competition.jpg);
+    background-image: url(images/football1.jpg);
     -webkit-animation-delay: 60s;
     -moz-animation-delay: 60s;
     -o-animation-delay: 60s;
@@ -243,7 +243,7 @@ a{
     animation-delay: 60s;
 }
 .slideshow li:nth-child(12) span {
-    background-image: url(images/mark-duffel-352915.jpg);
+    background-image: url(images/baseball1-mark-duffel-352915.jpg);
     -webkit-animation-delay: 66s;
     -moz-animation-delay: 66s;
     -o-animation-delay: 66s;
