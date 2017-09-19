@@ -2,65 +2,29 @@ var contentLinks = [];
 var contentTitles = [];
 var contentID = [];
 
-var collapsibleBody = document.querySelector('.collapsible-body');
-var collapsibleHeader = document.querySelector('.collapsible-header');
-// var redditData = {};
+$(document).ready(function(){
 
+  $('select').material_select();
 
-// select the form
-var selectForm = document.querySelector('#category');
-// stores the input text of the user dropdown selection
-// var searchTerm = $("se,lect option:selected").text();
+  var collapsibleBody = document.querySelector('.collapsible-body');
+  var collapsibleHeader = document.querySelector('.collapsible-header');
 
-// stores the value of the user dropdown selection ***DOES NOT WORK***
-// var userInput = $('.select-dropdown').val();
-// console.log(userInput);
+  var selectForm = document.querySelector('#category');
 
-// checks if value in array is a string
-// for (var i = 0; i < contentLinks.length; i++) {
-//   if (typeof contentLinks[i] === "string") {
-//     // checks if value is a link
-//     if (contentLinks[i].includes("http")) {
-//       console.log("Hello world");
-//     }
-//   }
-// }
-
-// function that grabs the array index of the select-dropdown options
-// $(document).ready(function () {
-//     $('select').material_select();
-//     $('select').change(function(){
-//         var newValuesArr = [],
-//             select = $(this),
-//             ul = select.prev();
-//         ul.children('li').toArray().forEach(function (li, i) {
-//             if ($(li).hasClass('active')) {
-//                 newValuesArr.push(select.children('option').toArray()[i].value - 1);
-//             }
-//         });
-//         select.val(newValuesArr);
-//         console.log(newValuesArr);
-//     });
-// });
-
-// $('.input-field').on('change', 'select', function(){
-//
-// });
-//
-// var userInput = $('#category').value;
-// console.log(userInput);
-
-// initialize our selector form and inputs
-$(document).ready(function() {
-  $('select').not('.disabled').material_select();
   $('#category').on('change', function(e) {
     e.preventDefault();
+    //$(".popout").html("")
     // stores the input text of the user dropdown selection
     var optionSelectedValue = selectForm.options[selectForm.selectedIndex].text;
-    console.log(optionSelectedValue);
-    // returns all of the gif links in an array
+    var submissions;
+
+    // returns all of the gif links, titles, and reddit ids in arrays
     $.get("https://www.reddit.com/r/" + optionSelectedValue + ".json", function(data) {
-      var submissions = data.data.children;
+
+      submissions = data.data.children;
+      contentLinks = [];
+      contentTitles = [];
+      contentID = [];
       for (var i = 0; i < submissions.length; i++) {
         // checks if submission to reddit is a video
         if (data.data.children[i].data.secure_media) {
@@ -80,59 +44,63 @@ $(document).ready(function() {
           }
         }
       }
-      // create an object out of the data parsed from reddit
-      // redditData.id = contentID.valueOf();
-      // redditData.links = contentLinks.valueOf();
-      // redditData.titles = contentTitles.valueOf();
 
-      $(document).ready(function() {
-        $('.collapsible').collapsible();
-        $('main').append('<ul data-collapsible="accordion"></ul>');
-        $('main ul').addClass('collapsible popout');
 
-        for (var j = 0; j < contentTitles.length; j++) {
-          $('main ul').append('<li></li>');
-          // start the creation of the collapsible
-          $('.collapsible').collapsible({
-            accordion: false, // A setting that changes the collapsible behavior to expandable instead of the default accordion style
-          });
-        };
 
-        // create the collapsible
-        $('.collapsible li').append('<div><i></i></div>');
-        $('.collapsible li').append('<div><span></span></div>');
-        $('i').addClass('material-icons');
-        $('i').parent().addClass("collapsible-header hoverable");
-        $('span').parent().addClass("collapsible-body");
 
-        // adds the titles to each collapsible header
-        $('.collapsible-header').each(function(index) {
-          $(this).html(contentTitles[index]);
-          $(this).prepend('<i class="fa fa-futbol-o fa-5x" aria-hidden="true"></i>');
-        })
+    // create an object out of the data parsed from reddit
+    // redditData.id = contentID.valueOf();
+    // redditData.links = contentLinks.valueOf();
+    // redditData.titles = contentTitles.valueOf();
 
-        // add id to the collapsible-body
-        $('main ul li .collapsible-body').each(function(index) {
-          $(this).attr('id', contentID[index]);
-        })
 
-        // adds the gif urls to each collapsible body
-        $('.collapsible-header').click('iframe', function(e) {
-          if ($(e.target).parent().hasClass('active')) {
-            $(this).next().next().html("");
-          }
-          // if (e.target.next().contains('iframe')) {
-          //   $('.collapsible-body').html("");
-          // }
-          // if ($(e.target).parent().hasClass('active')) {
-          //   $(e.target).next().innerHTML = "";
-          // }
-          $('.collapsible-body').html("");
+
+      $('.collapsible').collapsible();
+      $('main').html('');
+      $('main').append('<ul data-collapsible="accordion"></ul>');
+
+      $('main ul').addClass('collapsible popout');
+
+      for (var j = 0; j < contentTitles.length; j++) {
+        $('main ul').append('<li></li>');
+        // start the creation of the collapsible
+        $('.collapsible').collapsible({
+          accordion: false, // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+        });
+      };
+
+      // create the collapsible
+      $('.collapsible li').append('<div><i></i></div>');
+      $('.collapsible li').append('<div><span></span></div>');
+      $('i').addClass('material-icons');
+      $('i').parent().addClass("collapsible-header hoverable");
+      $('span').parent().addClass("collapsible-body");
+
+      // adds the titles to each collapsible header
+      $('.collapsible-header').each(function(index) {
+        $(this).html(contentTitles[index]);
+        $(this).prepend('<i class="fa fa-futbol-o fa-5x" aria-hidden="true"></i>');
+      })
+
+      // add id to the collapsible-body
+      $('main ul li .collapsible-body').each(function(index) {
+        $(this).attr('id', contentID[index]);
+      })
+
+      // adds the gif urls to each collapsible body
+      $('.collapsible-header').click(function(e) {
+        $('.collapsible-body').html("");
+        var clicked = $(this).data('clicked');
+        if (clicked) {
+          $(this).next().html('');
+        } else {
           var elementIndex = contentID.indexOf($(this).next().attr('id'));
           // $(this).next().html('<div style="width: 100%; height: 0px; position: relative; padding-bottom: 56.250%;"><iframe src=' + contentLinks[elementIndex] + '/ylhkwh '+ 'frameborder="0" width="100%" height="100%" allowfullscreen style="width: 100%; height: 100%; position: absolute;"></iframe></div>')
           $(this).next().html('<iframe class="gif" src=' + contentLinks[elementIndex] + '>');
-        })
+        }
+        $(this).data("clicked", !clicked);
       })
-    });
+      $('select').material_select();
+    })
   });
 });
