@@ -79,7 +79,7 @@ $(document).ready(function(){
       // adds the titles to each collapsible header
       $('.collapsible-header').each(function(index) {
         $(this).html(contentTitles[index]);
-        $(this).prepend('<i class="fa fa-futbol-o fa-5x" aria-hidden="true"></i>');
+        $(this).prepend('<img class="bodyLogo" src="images/logo/logo_white_background2.png">');
       })
 
       // add id to the collapsible-body
