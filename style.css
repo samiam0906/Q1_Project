@@ -18,25 +18,23 @@ main .collapsible {
   padding: 20px 0;
 }
 
-footer {
-  bottom: 0;
-  left: 0;
-  right: 0;
-  box-shadow: 1px 0px 8px 2px rgba(255, 0, 224, 1);
-  font-size: 0.60em;
+header .nav-wrapper {
+  height: 65px;
 }
 
-footer .col li {
-  list-style-type: none;
-}
-
-footer .footer-copyright .lastLine {
-  margin-bottom: -20px;
+header .materializeSelect {
+  padding-top: 10px;
 }
 
 header .select-wrapper .caret {
   color: white;
   font-size: 8.5px;
+}
+
+header img {
+  margin: 0 auto;
+  width: 162.5px;
+  height: auto;
 }
 
 .nav-wrapper .brand-logo {
@@ -51,19 +49,12 @@ ul.dropdown-content.select-dropdown li span {
   padding-right: 10px;
 }
 
-
 /* resize images */
 .mainLogo {
   max-width: 100vw;
   max-height: 100vh;
   height: 300px;
   width: auto;
-}
-
-header img {
-  margin: 0 auto;
-  width: 52px;
-  height: 55px;
 }
 
 .bodyLogo {
@@ -95,6 +86,22 @@ iframe {
 }
 .lastLine a {
   padding: 0 20px;
+}
+
+footer {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 1px 0px 8px 2px rgba(255, 0, 224, 1);
+  font-size: 0.60em;
+}
+
+footer .col li {
+  list-style-type: none;
+}
+
+footer .footer-copyright .lastLine {
+  margin-bottom: -20px;
 }
 
 /* unvisited link */
