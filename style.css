@@ -8,9 +8,10 @@ main {
   height: 100%;
   min-height: 200px;
   margin: 0 auto;
+  font-family: 'Libre Franklin', sans-serif;
 }
 
-main .collapsible{
+main .collapsible {
   flex: 1 0 auto;
   padding: 20px 0;
 }
@@ -19,7 +20,17 @@ footer {
   bottom: 0;
   left: 0;
   right: 0;
-  box-shadow: 1px 0px 8px 2px rgba(255,0,224,1);
+  box-shadow: 1px 0px 8px 2px rgba(255, 0, 224, 1);
+  font-size: 0.65em;
+}
+
+footer .col li {
+  list-style-type: none;
+}
+
+header .select-wrapper .caret {
+  color: white;
+  font-size: 8.5px;
 }
 
 .nav-wrapper .brand-logo {
@@ -30,14 +41,19 @@ footer {
   padding-right: 10px;
 }
 
+.brand-logo {
+  width: 40px;
+  height: 40px;
+}
+
 .bodyLogo {
   width: 40px;
   height: 40px;
-  margin: -9px 10px 0 0;
+  margin: -8px 12.5px 0 0;
 }
 
 .input-field {
-  box-shadow: 1px 0px 8px 2px rgba(255,0,224,1);
+  box-shadow: 1px 0px 8px 2px rgba(255, 0, 224, 1);
   padding-left: 10px;
 }
 
@@ -46,9 +62,38 @@ footer {
 }
 
 iframe {
-  margin: 0;
+  margin: 0 auto;
+  margin-top: -10px;
   padding: 0;
   border: none;
-  width: value;
-  height: value;
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+
+}
+.lastLine a {
+  padding: 0 20px;
+}
+
+/* unvisited link */
+footer a:link {
+  color: rgba(119, 119, 136, 1);
+}
+
+/* visited link */
+footer a:visited {
+  color: white;
+}
+
+/* mouse over link */
+footer a:hover {
+  color: rgba(255, 0, 224, 1);
+}
+
+/* selected link */
+footer a:active {
+  color: blue;
 }

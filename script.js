@@ -79,7 +79,18 @@ $(document).ready(function(){
       // adds the titles to each collapsible header
       $('.collapsible-header').each(function(index) {
         $(this).html(contentTitles[index]);
-        $(this).prepend('<img class="bodyLogo" src="images/logo/logo_white_background2.png">');
+        // changes the icon next to the headers based on sport selection
+        if (optionSelectedValue === "soccer") {
+          $(this).prepend('<img class="bodyLogo" src="images/logo/soccer_icon2.png">');
+        } else if (optionSelectedValue === "nfl") {
+          $(this).prepend('<img class="bodyLogo" src="images/logo/football_icon.png">');
+        } else if (optionSelectedValue === "nba") {
+          $(this).prepend('<img class="bodyLogo" src="images/logo/basketball_icon.png">');
+        } else if (optionSelectedValue === "baseball") {
+          $(this).prepend('<img class="bodyLogo" src="images/logo/baseball_icon.png">');
+        } else if (optionSelectedValue === "hockey") {
+          $(this).prepend('<img class="bodyLogo" src="images/logo/hockey_icon.png">');
+        }
       })
 
       // add id to the collapsible-body
@@ -96,7 +107,7 @@ $(document).ready(function(){
         } else {
           var elementIndex = contentID.indexOf($(this).next().attr('id'));
           // $(this).next().html('<div style="width: 100%; height: 0px; position: relative; padding-bottom: 56.250%;"><iframe src=' + contentLinks[elementIndex] + '/ylhkwh '+ 'frameborder="0" width="100%" height="100%" allowfullscreen style="width: 100%; height: 100%; position: absolute;"></iframe></div>')
-          $(this).next().html('<iframe class="gif" src=' + contentLinks[elementIndex] + '>');
+          $(this).next().html('<div style="width: 100%; height: 0px; position: relative; padding-bottom: 40%;"><iframe class="gif" src=' + contentLinks[elementIndex] + '></div>');
         }
         $(this).data("clicked", !clicked);
       })
