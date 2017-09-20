@@ -22,10 +22,16 @@ footer {
   right: 0;
   box-shadow: 1px 0px 8px 2px rgba(255, 0, 224, 1);
   font-size: 0.60em;
+  margin-top: 85px;
+  padding: 0;
 }
 
 footer .col li {
   list-style-type: none;
+}
+
+footer .footer-copyright .lastLine {
+  margin-bottom: -20px;
 }
 
 header .select-wrapper .caret {
@@ -48,7 +54,7 @@ header img {
 }
 
 .bodyLogo {
-  width: 40px;
+  width: 37.5px;
   height: 40px;
   margin: -8px 12.5px 0 0;
 }

@@ -83,9 +83,9 @@ $(document).ready(function(){
         if (optionSelectedValue === "soccer") {
           $(this).prepend('<img class="bodyLogo" src="images/logo/soccer_icon2.png">');
         } else if (optionSelectedValue === "nfl") {
-          $(this).prepend('<img class="bodyLogo" src="images/logo/football_icon.png">');
+          $(this).prepend('<img class="bodyLogo" src="images/logo/football_icon2.png">');
         } else if (optionSelectedValue === "nba") {
-          $(this).prepend('<img class="bodyLogo" src="images/logo/basketball_icon.png">');
+          $(this).prepend('<img class="bodyLogo" src="images/logo/basketball_icon2.png">');
         } else if (optionSelectedValue === "baseball") {
           $(this).prepend('<img class="bodyLogo" src="images/logo/baseball_icon.png">');
         } else if (optionSelectedValue === "hockey") {
