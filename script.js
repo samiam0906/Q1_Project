@@ -17,7 +17,12 @@ $(document).ready(function(){
     // stores the input text of the user dropdown selection
     var optionSelectedValue = selectForm.options[selectForm.selectedIndex].text;
     var submissions;
-
+    if (optionSelectedValue === "basketball") {
+      optionSelectedValue = "nba";
+    }
+    if (optionSelectedValue === "football") {
+      optionSelectedValue = "nfl";
+    }
     // returns all of the gif links, titles, and reddit ids in arrays
     $.get("https://www.reddit.com/r/" + optionSelectedValue + ".json", function(data) {
 
@@ -31,8 +36,11 @@ $(document).ready(function(){
           if (data.data.children[i].data.secure_media.oembed.type == "video") {
             // add the youtube embed urls
             if (data.data.children[i].data.domain === "youtube.com") {
-              var youtubeLink = data.data.children[i].data.url.replace("watch?v=", "embed/");
-              contentLinks.push(youtubeLink);
+              var youTubeLink = data.data.children[i].data.url.replace("watch?v=", "embed/");
+              contentLinks.push(youTubeLink);
+            } else if (data.data.children[i].data.domain === "youtu.be") {
+              var altYouTubeLink = data.data.children[i].data.url.replace("youtu.be/", "youtube.com/embed/");
+              contentLinks.push(altYouTubeLink);
             } else {
               // add the gif urls
               contentLinks.push(data.data.children[i].data.url);
@@ -44,6 +52,7 @@ $(document).ready(function(){
           }
         }
       }
+      console.log(contentLinks);
 
 
 

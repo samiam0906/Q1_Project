@@ -40,7 +40,11 @@ header .select-wrapper .caret {
 }
 
 .nav-wrapper .brand-logo {
-  padding-left: 10px;
+  padding-top: 5px;
+}
+
+ul.dropdown-content.select-dropdown li span {
+    color: #000; /* make select dropdown options black */
 }
 
 .right {
@@ -87,7 +91,6 @@ iframe {
   width: 100%;
   height: 100%;
 }
-
 
 }
 .lastLine a {
