@@ -21,7 +21,7 @@ footer {
   left: 0;
   right: 0;
   box-shadow: 1px 0px 8px 2px rgba(255, 0, 224, 1);
-  font-size: 0.65em;
+  font-size: 0.60em;
 }
 
 footer .col li {
@@ -41,9 +41,10 @@ header .select-wrapper .caret {
   padding-right: 10px;
 }
 
-.brand-logo {
-  width: 40px;
-  height: 40px;
+header img {
+  margin: 0 auto;
+  width: 52px;
+  height: 55px;
 }
 
 .bodyLogo {

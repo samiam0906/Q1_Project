@@ -107,7 +107,7 @@ $(document).ready(function(){
         } else {
           var elementIndex = contentID.indexOf($(this).next().attr('id'));
           // $(this).next().html('<div style="width: 100%; height: 0px; position: relative; padding-bottom: 56.250%;"><iframe src=' + contentLinks[elementIndex] + '/ylhkwh '+ 'frameborder="0" width="100%" height="100%" allowfullscreen style="width: 100%; height: 100%; position: absolute;"></iframe></div>')
-          $(this).next().html('<div style="width: 100%; height: 0px; position: relative; padding-bottom: 40%;"><iframe class="gif" src=' + contentLinks[elementIndex] + '></div>');
+          $(this).next().html('<div style="width: 100%; height: 0px; position: relative; padding-bottom: 52.50%;"><iframe class="gif" src=' + contentLinks[elementIndex] + '></div>');
         }
         $(this).data("clicked", !clicked);
       })
