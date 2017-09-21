@@ -1,13 +1,13 @@
 var contentLinks = [];
 var contentTitles = [];
 var contentID = [];
+var comments = [];
 
 $(document).ready(function(){
 
   $('select').material_select();
 
-  var collapsibleBody = document.querySelector('.collapsible-body');
-  var collapsibleHeader = document.querySelector('.collapsible-header');
+  var anchor = document.createElement('a');
 
   var selectForm = document.querySelector('#category');
 
@@ -44,6 +44,9 @@ $(document).ready(function(){
             } else if (data.data.children[i].data.domain === "m.youtube.com") {
               var mobileYouTubeLink = data.data.children[i].data.url.replace("m.youtube.com/watch?v=", "youtube.com/embed/");
               contentLinks.push(mobileYouTubeLink);
+            } else if (data.data.children[i].data.domain === "imgur.com") {
+              var imgurLink = data.data.children[i].data.url + '/embed';
+              contentLinks.push(imgurLink);
             } else {
               // add the gif urls
               contentLinks.push(data.data.children[i].data.url);
@@ -52,9 +55,13 @@ $(document).ready(function(){
             contentTitles.push(data.data.children[i].data.title);
             // add the reddit id of the submissions
             contentID.push(data.data.children[i].data.id);
+            // create link paths to the reddit comments section for each video
+            comments.push("https://www.reddit.com" + data.data.children[i].data.permalink);
           }
         }
       }
+      console.log(contentLinks);
+      console.log(comments);
 
       $('.collapsible').collapsible();
       $('main').html('');
@@ -110,6 +117,10 @@ $(document).ready(function(){
           $(this).next().html('<div style="width: 100%; height: 0px; position: relative; padding-bottom: 50.00%;"><iframe class="gif" src=' + contentLinks[elementIndex] + '></div>');
         }
         $(this).data("clicked", !clicked);
+        $(this).next().append('<div class="commentLink">View this post over at <a href="' + comments[elementIndex] + '">reddit.com</a></div>');
+        // anchor.setAttribute('href', comments[elementIndex]);
+        // $(this).next().append(anchor);
+
       })
       $('select').material_select();
     })
