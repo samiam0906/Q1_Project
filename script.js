@@ -41,6 +41,9 @@ $(document).ready(function(){
             } else if (data.data.children[i].data.domain === "youtu.be") {
               var altYouTubeLink = data.data.children[i].data.url.replace("youtu.be/", "youtube.com/embed/");
               contentLinks.push(altYouTubeLink);
+            } else if (data.data.children[i].data.domain === "m.youtube.com") {
+              var mobileYouTubeLink = data.data.children[i].data.url.replace("m.youtube.com/watch?v=", "youtube.com/embed/");
+              contentLinks.push(mobileYouTubeLink);
             } else {
               // add the gif urls
               contentLinks.push(data.data.children[i].data.url);
@@ -52,17 +55,6 @@ $(document).ready(function(){
           }
         }
       }
-      console.log(contentLinks);
-
-
-
-
-    // create an object out of the data parsed from reddit
-    // redditData.id = contentID.valueOf();
-    // redditData.links = contentLinks.valueOf();
-    // redditData.titles = contentTitles.valueOf();
-
-
 
       $('.collapsible').collapsible();
       $('main').html('');
@@ -115,8 +107,7 @@ $(document).ready(function(){
           $(this).next().html('');
         } else {
           var elementIndex = contentID.indexOf($(this).next().attr('id'));
-          // $(this).next().html('<div style="width: 100%; height: 0px; position: relative; padding-bottom: 56.250%;"><iframe src=' + contentLinks[elementIndex] + '/ylhkwh '+ 'frameborder="0" width="100%" height="100%" allowfullscreen style="width: 100%; height: 100%; position: absolute;"></iframe></div>')
-          $(this).next().html('<div style="width: 100%; height: 0px; position: relative; padding-bottom: 52.50%;"><iframe class="gif" src=' + contentLinks[elementIndex] + '></div>');
+          $(this).next().html('<div style="width: 100%; height: 0px; position: relative; padding-bottom: 50.00%;"><iframe class="gif" src=' + contentLinks[elementIndex] + '></div>');
         }
         $(this).data("clicked", !clicked);
       })
