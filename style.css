@@ -2,6 +2,7 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  box-sizing: border-box;
 }
 
 main {
@@ -123,6 +124,19 @@ footer {
   box-shadow: 1px 0px 8px 2px rgba(255, 0, 224, 1);
   font-size: 0.60em;
 }
+footer.page-footer {
+  padding-top: 5.5px;
+}
+
+footer .name {
+  font-size: 1.25em;
+  margin-bottom: 5.5px;
+}
+
+footer .row {
+  margin-bottom: 0;
+}
+
 footer .col li {
   list-style-type: none;
 }
