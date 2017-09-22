@@ -96,6 +96,8 @@ $(document).ready(function(){
           $(this).prepend('<img class="bodyLogo" src="images/logo/baseball_icon.png">');
         } else if (optionSelectedValue === "hockey") {
           $(this).prepend('<img class="bodyLogo" src="images/logo/hockey_icon.png">');
+        } else if (optionSelectedValue === "boxing") {
+          $(this).prepend('<img class="bodyLogo" src="images/logo/boxing_icon.png">');
         }
       })
 
