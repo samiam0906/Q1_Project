@@ -7,8 +7,6 @@ $(document).ready(function(){
 
   $('select').material_select();
 
-  var anchor = document.createElement('a');
-
   var selectForm = document.querySelector('#category');
 
   $('#category').on('change', function(e) {
@@ -118,9 +116,6 @@ $(document).ready(function(){
         }
         $(this).data("clicked", !clicked);
         $(this).next().append('<div class="commentLink">View this post over at <a href="' + comments[elementIndex] + '">reddit.com</a></div>');
-        // anchor.setAttribute('href', comments[elementIndex]);
-        // $(this).next().append(anchor);
-
       })
       $('select').material_select();
     })
