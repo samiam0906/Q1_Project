@@ -58,8 +58,8 @@ $(document).ready(function(){
           }
         }
       }
-      console.log(contentLinks);
-      console.log(comments);
+      // console.log(contentLinks);
+      // console.log(comments);
 
       $('.collapsible').collapsible();
       $('main').html('');

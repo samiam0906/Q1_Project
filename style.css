@@ -39,7 +39,7 @@ header img {
 }
 
 .nav-wrapper .brand-logo {
-  padding-top: 5px;
+  margin: 6px 0;
 }
 
 ul.dropdown-content.select-dropdown li span {
@@ -50,7 +50,6 @@ ul.dropdown-content.select-dropdown li span {
 .right {
   padding-right: 10px;
 }
-
 
 /* resize images */
 
